@@ -10,5 +10,3 @@ It's a hands-on microservice practice project.It contains:
 
 - Spring Cloud Gateway
 - Spring Cloud Netflix Eureka
-
-s
