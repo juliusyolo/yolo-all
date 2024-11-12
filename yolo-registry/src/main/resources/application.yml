@@ -1,38 +1,25 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${EUREKA_INSTANCE_HOSTNAME}:${EUREKA_SERVER_PORT}/eureka/,${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
   instance:
-    hostname: localhost
+    hostname: ${EUREKA_INSTANCE_HOSTNAME}
     appname: yolo-registry
     prefer-ip-address: true
 
 server:
-  port: 8081
+  port: ${EUREKA_SERVER_PORT}
 
-
-#---
-#spring:
-#  profiles: peer1
-#eureka:
-#  instance:
-#    hostname: peer1
-#
-#---
-#spring:
-#  profiles: peer2
-#eureka:
-#  instance:
-#    hostname: peer2
-#
-#---
-#spring:
-#  profiles: peer3
-#eureka:
-#  instance:
-#    hostname: peer3
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info,metrics,loggers
+  endpoint:
+    health:
+      show-details: always
+
+
+spring:
+  application:
+    name: yolo-registry

@@ -1,0 +1,12 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka/
+    eureka-server-port: 8761
+  instance:
+    hostname: localhost
+    appname: yolo-consumer-service
+    prefer-ip-address: true
+
+server:
+  port: 8081

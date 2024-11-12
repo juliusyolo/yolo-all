@@ -1,0 +1,44 @@
+services:
+  yolo-registry-1:
+    image: yolo/yolo-registry
+    container_name: yolo-registry-1
+    hostname: yolo-registry-1
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=yolo-registry-1
+      - EUREKA_SERVER_PORT=8761
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://yolo-registry-2:8761/eureka/,http://yolo-registry-3:8761/eureka/
+    ports:
+      - "8761:8761"
+    networks:
+      - yolo-net
+
+
+  yolo-registry-2:
+    image: yolo/yolo-registry
+    container_name: yolo-registry-2
+    hostname: yolo-registry-2
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=yolo-registry-2
+      - EUREKA_SERVER_PORT=8761
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://yolo-registry-1:8761/eureka/,http://yolo-registry-3:8761/eureka/
+    ports:
+      - "8762:8761"
+    networks:
+      - yolo-net
+
+  yolo-registry-3:
+    image: yolo/yolo-registry
+    container_name: yolo-registry-3
+    hostname: yolo-registry-3
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=yolo-registry-3
+      - EUREKA_SERVER_PORT=8761
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://yolo-registry-1:8761/eureka/,http://yolo-registry-2:8761/eureka/
+    ports:
+      - "8763:8761"
+    networks:
+      - yolo-net
+
+networks:
+  yolo-net:
+    external: true

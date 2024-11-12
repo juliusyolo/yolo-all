@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  yolo-nginx-1:
+    image: yolo/yolo-nginx
+    container_name: yolo-nginx-1
+    hostname: yolo-nginx-1
+    ports:
+      - "9090:80"
+    networks:
+      - yolo-net
+
+networks:
+  yolo-net:
+    external: true

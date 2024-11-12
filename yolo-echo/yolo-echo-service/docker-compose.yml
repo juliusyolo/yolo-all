@@ -1,0 +1,21 @@
+services:
+  yolo-echo-1:
+    image: yolo/yolo-echo
+    container_name: yolo-echo-1
+    hostname: yolo-echo-1
+    environment:
+      - ECHO_SERVICE_HOSTNAME=yolo-gateway-1
+      - SERVER_PORT=8080
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://yolo-registry-1:8761/eureka/,http://yolo-registry-2:8761/eureka/,http://yolo-registry-3:8761/eureka/
+      - DATASOURCE_USERNAME=root
+      - DATASOURCE_PASSWORD=123456
+      - DATASOURCE_URL=jdbc:mysql://yolo-db:3306/yolo?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    ports:
+      - "8084:8080"
+    networks:
+      - yolo-net
+
+networks:
+  yolo-net:
+    external: true
+
