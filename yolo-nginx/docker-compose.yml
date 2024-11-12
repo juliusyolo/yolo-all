@@ -6,7 +6,7 @@ services:
     container_name: yolo-nginx-1
     hostname: yolo-nginx-1
     ports:
-      - "9090:80"
+      - "8888:80"
     networks:
       - yolo-net
 
