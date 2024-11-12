@@ -1,9 +1,5 @@
 package com.juliusyolo.yolo.consumer;
 
-import org.springframework.aop.framework.AopContext;
-import org.springframework.aop.framework.AopProxyUtils;
-import org.springframework.aop.framework.DefaultAopProxyFactory;
-import org.springframework.aop.support.AopUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

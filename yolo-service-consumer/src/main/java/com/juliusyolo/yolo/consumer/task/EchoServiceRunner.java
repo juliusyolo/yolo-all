@@ -4,8 +4,6 @@ import com.juliusyolo.yolo.api.EchoApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
