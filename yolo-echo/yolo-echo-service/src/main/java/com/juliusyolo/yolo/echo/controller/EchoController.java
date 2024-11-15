@@ -18,6 +18,7 @@ public class EchoController implements EchoApi {
     @Override
     @GetMapping("/hello/say")
     public String sayHello() {
+        System.out.println("Hello World");
         return "hello,julius";
     }
 

@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   yolo-nginx-1:
     image: yolo/yolo-nginx

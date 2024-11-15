@@ -2,10 +2,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${EUREKA_INSTANCE_HOSTNAME}:${EUREKA_SERVER_PORT}/eureka/,${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+
   instance:
     hostname: ${EUREKA_INSTANCE_HOSTNAME}
-    appname: yolo-registry
-    prefer-ip-address: true
+    app-name: yolo-registry
 
 server:
   port: ${EUREKA_SERVER_PORT}
